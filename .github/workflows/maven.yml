@@ -33,7 +33,8 @@ jobs:
         with:
           ref: ${{ github.REF }}
           fetch-depth: 0
-
+          java-version: 11
+          
       # Conditional execution can be done, in this case the parameter to use with sonar scanner are different if we are analyzing master or a branch
       - if: endsWith(github.REF, '/master') != true
         name: 'Run an analysis of the ${{ github.REF }} branch'
